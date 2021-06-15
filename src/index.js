@@ -1,13 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import StepOne from './screens/booking/stepOne';
+import StepTwo from './screens/booking/stepTwo';
+import StepThree from './screens/booking/stepThree';
+import StepFour from './screens/booking/stepFour';
+import StepFive from './screens/booking/stepFive';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <BrowserRouter>
+      <Switch>
+        <Route exact path='/' component={StepOne} />
+        <Route exact path='/steptwo' component={StepTwo} />
+        <Route exact path='/stepthree' component={StepThree} />
+        <Route exact path='/stepfour' component={StepFour} />
+        <Route exact path='/stepfive' component={StepFive} />
+      </Switch>
+    </BrowserRouter>,
   document.getElementById('root')
 );
 
